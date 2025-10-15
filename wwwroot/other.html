@@ -14,11 +14,6 @@
             <h2 id="currentTime" style="display: none;"></h2>
 
         </header>
-
-        <!-- jQuery CDN with SRI -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
-        integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" 
-        crossorigin="anonymous"></script>
     
     <textarea id="query" rows="1" cols="40" placeholder="Search the information seas"></textarea>
     <button id="searchBtn">Search</button>
@@ -45,7 +40,7 @@
             // Display formatted results
             if (json.items && json.items.length > 0) {
                 const resultsHTML = json.items.map(
-                    item => `<p><a href="${item.link}" target="_blank">${item.title}</a><br><span class="result-url">${item.link}</span><br>${item.snippet}</p>`
+                    item => `<p><a href="${item.link}" target="_blank">${item.title}</a><br>${item.snippet}</p>`
                 ).join("");
                 document.getElementById("student-results").innerHTML = resultsHTML;
             } else {

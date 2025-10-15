@@ -4,14 +4,10 @@ function displayCurrentTime() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const timeString = hours + ':' + minutes;
     
-    $('#time').html(timeString).css('visibility', 'visible');
-    
-    $('#time').dialog({
-        title: 'Current Time',
-        modal: true,
-        width: 350
-    });
+    // Display time in header h2 element
+    $('#currentTime').text('Current Time: ' + timeString).show();
 }
+
 function displayCurrentDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -19,13 +15,8 @@ function displayCurrentDate() {
     const day = String(now.getDate()).padStart(2, '0');
     const dateString = month + '/' + day + '/' + year;
     
-    $('#time').html(dateString).css('visibility', 'visible');
-    
-    $('#time').dialog({
-        title: 'Current Date',
-        modal: true,
-        width: 350
-    });
+    // Display date in header h2 element
+    $('#currentTime').text('Current Date: ' + dateString).show();
 }
 
 $(document).ready(function() {

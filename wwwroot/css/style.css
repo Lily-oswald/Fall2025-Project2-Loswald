@@ -15,7 +15,6 @@ body {
 }
 
 
-
 header {
     text-align: center;
     padding: 40px 20px;
@@ -26,7 +25,7 @@ header h1 {
     color: #ffffff;
     font-size: 4em;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 header h2 {
 	color: rgba(255, 255, 255, 0.67);
@@ -77,73 +76,50 @@ button:hover {
     background: #357ae8;
 }
 
-#searchResults {
-    visibility: hidden;
-    background: rgba(255, 255, 255, 0.95);
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-#searchResults.visible {
-    visibility: visible;
-}
-
-.search-result {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.search-result:last-child {
-    border-bottom: none;
-}
-
-.result-title {
-    font-size: 1.3em;
-    color: #1a0dab;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.result-title:hover {
-    text-decoration: underline;
-}
-
-.result-link {
-    color: #006621;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-}
-
-.result-snippet {
-    color: #545454;
-    line-height: 1.5;
-}
 
 #time {
     visibility: hidden;
 	color: white;
 }
 
-#date {
-    visibility: hidden;
-    color: white;
+/* Search results container */
+#student-results {
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #333333; 
+    display: none; /* Initially hidden until search is performed */
 }
 
-.ui-dialog {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+/* Show the container when search is clicked */
+#student-results:not(:empty) {
+    display: block;
 }
 
-.ui-dialog-titlebar {
-    background: #4285f4;
-    color: white;
+/* Search result links (titles) */
+#student-results a {
+    color: #1a0dab; 
+    font-weight: bold;
 }
 
-.ui-dialog-content {
-    font-size: 2em;
-    text-align: center;
-    padding: 30px;
+#student-results a:hover {
+    text-decoration: underline;
+    color: #0066cc; 
+}
+
+/* result paragraph */
+#student-results p {
+    margin-bottom: 15px;
+    color: #333333; 
+}
+
+/* URL styling */
+.result-url {
+    color: #006621;
+    font-size: 0.9em;
+    font-style: italic;
+    text-decoration: underline;
+    word-break: break-all;
 }
